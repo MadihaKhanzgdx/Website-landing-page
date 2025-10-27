@@ -8,6 +8,10 @@
 body {
   background: #f5f7fa;
   color: #333;
+  padding-top: 80px;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -76,6 +80,52 @@ body {
   color: #ffb703;
   transform: translateY(-2px);
 }
+/* ========== Hamburger Menu Styles ========== */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #ffb703;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Hide menu on small screens initially */
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #00214d, #003b73);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    gap: 20px;
+    padding: 20px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+}
+
 
 
 
@@ -139,6 +189,39 @@ body {
   background: #ffaa00;
   transform: scale(1.05);
 }
+/* Responsive Fix for Hero Section */
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto; /* allow content height to define section size */
+    background-position: center top; /* keeps the main part visible */
+    background-size: cover; /* ensures full width coverage */
+    background-attachment: scroll; /* prevent zoom/stretch bug */
+    padding: 100px 20px 80px; /* spacing for readability + navbar */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+.hero-section::before {
+  background: rgba(0, 0, 0, 0.3); /* subtle dark overlay */
+}
+.hero-content h1, .hero-content p {
+  color: #fff;
+}
+
+
 
 
 
@@ -390,6 +473,103 @@ body {
   background: #ffb703;
   color: #001e4d;
 }
+/* ===== Fees Page ===== */
+.fees-section {
+  padding: 120px 8%;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.fees-container h2 {
+  font-size: 2.5rem;
+  color: #00214d;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.fees-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #ffb703;
+  border-radius: 3px;
+}
+
+.section-subtitle {
+  color: #333;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.table-wrapper {
+  margin-top: 40px;
+  overflow-x: auto; /* Enables horizontal scroll on mobile */
+}
+
+.fees-table {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+
+.fees-table th,
+.fees-table td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.fees-table th {
+  background: #00214d;
+  color: #fff;
+}
+
+.fees-table tr:nth-child(even) {
+  background: #f1f4f8;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .fees-container h2 {
+    font-size: 2rem;
+  }
+
+  .fees-table th,
+  .fees-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fees-section {
+    padding: 100px 4%;
+  }
+
+  .fees-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .fees-table th,
+  .fees-table td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
+
 
 /* Form */
 .contact-form {
@@ -478,12 +658,14 @@ body {
   margin: 5px 0;
 }
 
-.social-icons a  {
-  width: 24px;
-  margin-right: 10px;
-  color: #ffffff;
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
@@ -493,7 +675,74 @@ body {
 }
 .social-icons a:hover {
   color: #ffb703;
-  transform: translateY(-3px);
+  transform: scale(1.1);
+}
+.hero-btn:hover, .about-btn:hover, .course-btn:hover, .btn-submit:hover {
+  box-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+}
+/* Responsive Design */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-container,
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text,
+  .contact-info {
+    max-width: 90%;
+  }
+
+  .course-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-links {
+    display: none; /* Hide on small devices (for hamburger menu later) */
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
 }
 
 
