@@ -80,7 +80,7 @@ html {
   color: #ffb703;
   transform: translateY(-2px);
 }
-/* ========== Hamburger Menu Styles ========== */
+/*Hamburger Menu*/
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -92,8 +92,7 @@ html {
 .menu-toggle:hover {
   transform: scale(1.1);
 }
-
-/* Hide menu on small screens initially */
+/* responsive on mobile */
 @media (max-width: 768px) {
   .nav-container {
     justify-content: space-between;
@@ -125,10 +124,6 @@ html {
     font-size: 1.1rem;
   }
 }
-
-
-
-
 /* Hero */
 .hero-section {
   width: 100%;
@@ -189,14 +184,14 @@ html {
   background: #ffaa00;
   transform: scale(1.05);
 }
-/* Responsive Fix for Hero Section */
+/* Responsive Hero Section */
 @media (max-width: 768px) {
   .hero-section {
-    height: auto; /* allow content height to define section size */
-    background-position: center top; /* keeps the main part visible */
-    background-size: cover; /* ensures full width coverage */
-    background-attachment: scroll; /* prevent zoom/stretch bug */
-    padding: 100px 20px 80px; /* spacing for readability + navbar */
+    height: auto; 
+    background-position: center top;
+    background-size: cover; 
+    background-attachment: scroll; 
+    padding: 100px 20px 80px; 
   }
 
   .hero-content h1 {
@@ -215,15 +210,11 @@ html {
   }
 }
 .hero-section::before {
-  background: rgba(0, 0, 0, 0.3); /* subtle dark overlay */
+  background: rgba(0, 0, 0, 0.3);
 }
 .hero-content h1, .hero-content p {
   color: #fff;
 }
-
-
-
-
 
 /* About Section */
 .about-section {
@@ -507,7 +498,7 @@ html {
 
 .table-wrapper {
   margin-top: 40px;
-  overflow-x: auto; /* Enables horizontal scroll on mobile */
+  overflow-x: auto; 
 }
 
 .fees-table {
@@ -536,7 +527,7 @@ html {
   background: #f1f4f8;
 }
 
-/* ===== Responsive Design ===== */
+/* Responsive */
 @media (max-width: 768px) {
   .fees-container h2 {
     font-size: 2rem;
@@ -680,7 +671,7 @@ html {
 .hero-btn:hover, .about-btn:hover, .course-btn:hover, .btn-submit:hover {
   box-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
 }
-/* Responsive Design */
+/* Responsive*/
 @media (max-width: 992px) {
   .nav-links {
     gap: 20px;
@@ -720,7 +711,7 @@ html {
 
 @media (max-width: 576px) {
   .nav-links {
-    display: none; /* Hide on small devices (for hamburger menu later) */
+    display: none;
   }
 
   .hero-content h1 {
